@@ -53,12 +53,12 @@ export default function VideoPost({
         <video
           ref={videoRef}
           src={videoSrc}
+          autoPlay
           muted
           playsInline
           loop
+          preload="none"
           className="w-[300px] h-max object-cover rounded-t-2xl"
-          onMouseEnter={() => videoRef.current?.play()}
-          onMouseLeave={() => videoRef.current?.pause()}
         />
       </div>
 

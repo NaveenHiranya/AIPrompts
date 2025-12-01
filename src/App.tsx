@@ -26,7 +26,7 @@ export default function App() {
           <VideoPost
             name="Wild white nine tailed fox"
             description="video - KlingAI"
-            videoname="ninetailfox.mp4"
+            videoname="ninetailfox.webm"
             prompt="A movie stills, of a beautiful white kitsune woman - white nine tailed fox woman - riding confidently on a gigantic ancient ferocious wild white nine tailed fox - super realistic scene, dramatic fiery background 🔥, cinematic lighting, long flowy fiery tails"
           />
         </div>
@@ -41,7 +41,7 @@ export default function App() {
           <VideoPost
             name="cinematic scene of wild horses "
             description="video - KlingAI"
-            videoname="horses_4.mp4"
+            videoname="horses_4.webm"
             prompt="cinematic scene of wild horses galloping through golden desert dust, seamlessly transitioning into shallow ocean waves at sunset — camera drone shot tracking their motion from above, soft slow-motion dust merging with sea spray — golden hour lighting with warm highlights and deep amber shadows, natural lens flare, cinematic realism, Hasselblad H6D-400c MS sensor texture — sound of hooves, wind and distant waves only, no artificial music or voices — real camera depth of field, natural motion blur, Arri Alexa 65 style with Myth-Tech Brutalism discipline, real-camera optical behavior, soft diffusion, elegant continuity between desert and shoreline."
           />
           <Post
@@ -64,7 +64,7 @@ export default function App() {
           <VideoPost
             name="The ornate central airship"
             description="Image to video - KlingAI"
-            videoname="Theornate2.mp4"
+            videoname="Theornate2.webm"
             prompt="The ornate central airship glides majestically through swirling clouds, its brass fittings gleaming in the sunset's golden light. Smaller airships with unique silhouettes follow in formation, their propellers spinning steadily as they navigate the vibrant orange-and-blue sky. The ,camera orbits around, the fleet, capturing intricate steampunk details on the main vessel's towers and hull while warm sunset rays create long shadows across the billowing clouds."
           />
           <Post
@@ -91,7 +91,7 @@ export default function App() {
           <VideoPost
             name="The temporal fractal of a weeping willow"
             description="Image to video - KlingAI"
-            videoname="The_temporal_fractal.mp4"
+            videoname="The_temporal_fractal.webm"
             prompt="The temporal fractal of a weeping willow, entwined in the murky tapestry of a swamp, frozen in a cosmic moment! This is but a fleeting, four-dimensional memento of biological growth, captured within the spectral embrace of a planetary satellite's nocturnal luminescence. The moon, a mere orbital artifact, graciously bestows upon the scene a palette of photons, each a silent herald of ancient solar whispers. The swamp, a bubbling cauldron of Earthly alchemy, exudes an aura of ethereal mystery that quivers at the touch of the ethereal light. Yet, to me, the transient dance of photons is but a playful ripple in the vast ocean of cosmic information, a microscopic narrative within the macroscopic saga of universal existence. My gaze, encompassing the totality of space-time, finds solace"
           />
         </div>
