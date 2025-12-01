@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 
-// Import all videos (mp4/webm)
+// Import videos
 const videos = import.meta.glob("../assets/PostVideos/*.{mp4,webm}", {
   eager: true,
   import: "default",
 });
 
-// Import all preview images (jpg/png)
+// Import preview images
 const images = import.meta.glob("../assets/PostVideos/*.{jpg,png}", {
   eager: true,
   import: "default",
@@ -26,18 +26,21 @@ export default function VideoPost({
   description,
 }: CardProps) {
   const videoSrc = videos[`../assets/PostVideos/${videoname}`] as string;
-
-  // Convert example: "video1.mp4" → "video1.jpg"
   const imageSrc = images[
     `../assets/PostVideos/${videoname.replace(/\.(mp4|webm)$/i, ".jpg")}`
   ] as string;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const [hovered, setHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    videoRef.current?.play();
+  };
 
   const handleClick = () => {
     const newCount = clickCount + 1;
@@ -59,15 +62,11 @@ export default function VideoPost({
   };
 
   return (
-    <div className="py-5 px-4 bg-gray-800 mx-auto rounded-2xl w-max border flex flex-col items-center m-2 relative">
+    <div className="py-4 px-2 bg-gray-800 mx-auto rounded-2xl w-max border flex flex-col items-center m-2 relative">
 
       {/* Thumbnail / Video */}
-      <div
-        className="w-[300px] rounded-t-2xl overflow-hidden"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {!hovered ? (
+      <div className="w-[300px] rounded-t-2xl overflow-hidden">
+        {!isPlaying ? (
           <img
             src={imageSrc}
             loading="lazy"
@@ -79,27 +78,41 @@ export default function VideoPost({
             src={videoSrc}
             muted
             loop
-            autoPlay
             playsInline
-            preload="auto"
+            autoPlay
             className="w-[300px] h-max object-cover rounded-t-2xl"
           />
         )}
       </div>
 
       {/* Title */}
-      <h2 className="text-white font-medium text-3xl w-[300px] mt-[-19px] text-shadow-lg/30">
+      <h2 className="text-white font-medium text-3xl w-[300px] mt-[-18px] text-shadow-lg/30 ">
         {name}
       </h2>
 
+      {/* Play Button (above description) */}
+      <div className="w-[300px] mt-2">
+      {!isPlaying && (
+        <button
+          onClick={handlePlay}
+          className="bg-green-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-green-800 transition  cursor-pointer"
+        >
+          Play Video
+        </button>
+      )}
+      </div>
+
       {/* Description */}
-      <div className="w-full m-2">
+      <div className="w-[300px] m-2">
         <p className="text-green-400">{description}</p>
       </div>
 
-      {/* Button */}
+      
+      
+
+      {/* Prompt Button */}
       <button
-        className="bg-green-600 w-[300px] rounded-lg cursor-pointer text-white py-2 font-bold mt-3"
+        className="bg-green-600 w-[300px] rounded-lg cursor-pointer text-white py-2 font-bold mt-1"
         onClick={handleClick}
       >
         Get Prompt
