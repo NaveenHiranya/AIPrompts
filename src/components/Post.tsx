@@ -48,6 +48,7 @@ export default function Post({ imgname, name, prompt,description }: CardProps) {
           className="w-[300px] h-max object-cover rounded-t-2xl"
           src={imgSrc}
           alt="postImage"
+          loading="lazy"
         />
       </div>
 
