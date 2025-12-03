@@ -112,6 +112,7 @@ export default function App() {
           <img className="w-10" src={whatsapp}></img>Whatsapp
         </a>
         <p>Develped By Vnix</p>
+        <a href="/contact">contact</a>
       </div>
     </>
   );
