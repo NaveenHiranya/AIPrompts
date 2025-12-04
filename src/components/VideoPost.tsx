@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { posts } from "../data/posts";
 
 // Import videos
 const videos = import.meta.glob("../assets/PostVideos/*.{mp4,webm}", {
@@ -15,16 +16,13 @@ const images = import.meta.glob("../assets/PostVideos/*.{jpg,png}", {
 interface CardProps {
   name: string;
   videoname: string;
-  prompt: string;
-  description: string;
+  link: string;
 }
 
-export default function VideoPost({
-  name,
-  videoname,
-  prompt,
-  description,
-}: CardProps) {
+export default function VideoPost({ name, videoname, link }: CardProps) {
+  const postInfo = posts.find((p) => p.id === link);
+  if (postInfo?.videoname) {
+  }
   const videoSrc = videos[`../assets/PostVideos/${videoname}`] as string;
   const imageSrc = images[
     `../assets/PostVideos/${videoname.replace(/\.(mp4|webm)$/i, ".jpg")}`
@@ -33,38 +31,19 @@ export default function VideoPost({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
-  const [copied, setCopied] = useState(false);
-
+  
   const handlePlay = () => {
     setIsPlaying(true);
     videoRef.current?.play();
   };
 
   const handleClick = () => {
-    const newCount = clickCount + 1;
-    setClickCount(newCount);
-
-    if (newCount <= 2) {
-      window.open(
-        "https://www.effectivegatecpm.com/udbfkap8f5?key=e61ce9290b438cdada71fde0ac68130f",
-        "_blank"
-      );
-    } else if (newCount === 3) {
-      setShowPopup(true);
-    }
-  };
-
-  const closePopup = () => {
-    setShowPopup(false);
-    setClickCount(0);
+    window.location.href = `/post/${link}`;
   };
 
   return (
     <div className="py-4 px-2 bg-gray-800 mx-auto rounded-2xl w-max border flex flex-col items-center m-2 relative">
-
-      {/* Thumbnail / Video */}
+      
       <div className="w-[300px] rounded-t-2xl overflow-hidden">
         {!isPlaying ? (
           <img
@@ -90,64 +69,31 @@ export default function VideoPost({
         {name}
       </h2>
 
-      {/* Play Button (above description) */}
+  
       <div className="w-[300px] mt-2">
-      {!isPlaying && (
-        <button
-          onClick={handlePlay}
-          className="bg-green-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-green-800 transition  cursor-pointer"
-        >
-          Play Video
-        </button>
-      )}
+        {!isPlaying && (
+          <button
+            onClick={handlePlay}
+            className="bg-green-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-green-800 transition  cursor-pointer"
+          >
+            Play Video
+          </button>
+        )}
       </div>
 
-      {/* Description */}
+    
       <div className="w-[300px] m-2">
-        <p className="text-green-400">{description}</p>
+        <p className="text-green-400">{postInfo?.description}</p>
       </div>
 
-      
-      
-
-      {/* Prompt Button */}
+    
       <button
         className="bg-green-600 w-[300px] rounded-lg cursor-pointer text-white py-2 font-bold mt-1"
         onClick={handleClick}
       >
         Get Prompt
       </button>
-
-      {/* Popup */}
-      {showPopup && (
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-10">
-          <div className="w-[calc(100vw-50px)] text-white bg-gray-900 rounded-xl text-center p-6 border border-amber-600 [@media(min-width:500px)]:w-[350px]">
-            <p className="font-bold text-lg mb-4">{name}</p>
-            <p className="border mb-4 p-2">{prompt}</p>
-
-            <div className="flex justify-center gap-2">
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(prompt);
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 1500);
-                }}
-                className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg font-bold"
-              >
-                {copied ? "copied" : "copy"}
-              </button>
-
-              <button
-                onClick={closePopup}
-                className="bg-green-600 cursor-pointer text-white px-4 py-2 rounded-lg font-bold"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
     </div>
+
   );
 }
