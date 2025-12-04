@@ -77,7 +77,7 @@ export default function NotFound() {
           "https://www.effectivegatecpm.com/udbfkap8f5?key=e61ce9290b438cdada71fde0ac68130f",
           "_blank" // change to "_self" for same tab
         );
-      }, 800);
+      }, 200);
 
       setTimeout(() => {
         setCopied(false);
