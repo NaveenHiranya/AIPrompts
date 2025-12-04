@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { posts } from "../data/posts";
 import { useEffect, useState } from "react";
+import AdUnit50 from "../components/AdUnit50";
+import AdUnitG from "../components/AdUnitG";
 
 export default function NotFound() {
   const { id } = useParams();
@@ -27,43 +29,6 @@ export default function NotFound() {
   }, [counter]);
 
   /* -------------------------------
-      MAIN INVOKE AD LOADER
-  --------------------------------*/
-  useEffect(() => {
-    const oldScript = document.getElementById("ad-script");
-    if (oldScript) oldScript.remove();
-
-    const adContainer = document.getElementById(
-      "container-156795e882446485cb5379ce3382344c"
-    );
-    if (adContainer) adContainer.innerHTML = "";
-
-    const script = document.createElement("script");
-    script.id = "ad-script";
-    script.async = true;
-    script.src =
-      "//pl28179829.effectivegatecpm.com/156795e882446485cb5379ce3382344c/invoke.js";
-
-    document.body.appendChild(script);
-  }, [id]);
-
-  /* -------------------------------------
-      SECOND AD SCRIPT (BEST PLACEMENT)
-  --------------------------------------*/
-  useEffect(() => {
-    const oldAd2 = document.getElementById("ad-script-2");
-    if (oldAd2) oldAd2.remove();
-
-    const script2 = document.createElement("script");
-    script2.id = "ad-script-2";
-    script2.type = "text/javascript";
-    script2.src =
-      "//pl28185165.effectivegatecpm.com/8e/d9/e0/8ed9e0d494732c88c49514fe24b93a32.js";
-
-    document.body.appendChild(script2);
-  }, [id]);
-
-  /* -------------------------------
       COPY BUTTON + OPEN AD
   --------------------------------*/
   const copyPrompt = () => {
@@ -71,22 +36,21 @@ export default function NotFound() {
       navigator.clipboard.writeText(post.prompt);
       setCopied(true);
 
-      // small delay → open ad
+      // Open ad after small delay
       setTimeout(() => {
         window.open(
           "https://www.effectivegatecpm.com/udbfkap8f5?key=e61ce9290b438cdada71fde0ac68130f",
-          "_blank" // change to "_self" for same tab
+          "_blank"
         );
       }, 200);
 
-      setTimeout(() => {
-        setCopied(false);
-      }, 4000);
+      setTimeout(() => setCopied(false), 4000);
     }
   };
 
   return (
     <div className="p-6 bg-black min-h-screen text-white flex flex-col gap-6">
+      <AdUnit50 />
       {!post ? (
         <p className="text-center text-xl font-bold">No post found</p>
       ) : (
@@ -110,15 +74,13 @@ export default function NotFound() {
                     : "bg-green-600 hover:bg-green-500"
                 }`}
               >
-                {loading ? "Wait..." : copied ? "Copied!" : "Copy"}
+                {loading ? `Wait... (${counter})` : copied ? "Copied!" : "Copy"}
               </button>
             </div>
 
             {/* LOADING OR PROMPT */}
             {loading ? (
-              <p className="text-gray-400 italic">
-                Loading prompt... ({counter})
-              </p>
+              <p className="text-gray-400 italic">Loading prompt... ({counter})</p>
             ) : (
               <p className="text-gray-200 whitespace-pre-wrap leading-relaxed">
                 {post.prompt}
@@ -128,15 +90,6 @@ export default function NotFound() {
         </>
       )}
 
-      {/* SECOND AD (best spot) */}
-      <div className="max-w-2xl mx-auto my-4" id="ad-slot-2"></div>
-
-      {/* INVOKE AD */}
-      <div
-        id="container-156795e882446485cb5379ce3382344c"
-        className="max-w-2xl mx-auto"
-      />
-
       {/* GO HOME BUTTON */}
       <Link
         to="/"
@@ -144,7 +97,8 @@ export default function NotFound() {
       >
         Go Home
       </Link>
-
+      
+      <AdUnitG />
       <div className="h-10" />
     </div>
   );

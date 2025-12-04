@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function AdUnit() {
+export default function AdUnit50() {
   useEffect(() => {
     // Create script 1
     const script1 = document.createElement("script");

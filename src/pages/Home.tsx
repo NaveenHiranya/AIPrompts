@@ -1,7 +1,9 @@
 import "../App.css";
 import Post from "../components/Post";
 import VideoPost from "../components/VideoPost";
-import AdUnit from "../components/AdUnit";
+import AdUnit50 from "../components/AdUnit50";
+import AdUnitG from "../components/AdUnitG";
+import AdUnitHPF from "../components/AdUnitHPF";
 
 import whatsapp from "../assets/PostImages/whatsapp.svg";
 import facebook from "../assets/PostImages/facebook.svg";
@@ -36,7 +38,7 @@ export default function App() {
             link="Wild-white-nine-tailed-fox"
           />
 
-          <AdUnit />
+          <AdUnit50 />
         </div>
 
         {/* 2 */}
@@ -58,14 +60,16 @@ export default function App() {
             name="Night City Warrior"
             link="Night-City-Warrior"
           />
+
+          <AdUnitHPF />
         </div>
 
         {/* 3 */}
         <div className="overflow-y-auto">
           <Post
             imgname="image_drawed_2.jpg"
-            name="black and white portrait"
-            link="black-and-white-portrait"
+            name="Black and white portrait"
+            link="Black-and-white-portrait"
           />
 
           <VideoPost
@@ -80,7 +84,7 @@ export default function App() {
             link="A-dramatic-stylized-portrait"
           />
 
-          <AdUnit />
+          
         </div>
 
         {/* 4 */}
@@ -102,6 +106,8 @@ export default function App() {
             videoname="The_temporal_fractal.webm"
             link="The-temporal-fractal-of-a-weeping-willow"
           />
+          <AdUnitG />
+          
         </div>
 
       </div>

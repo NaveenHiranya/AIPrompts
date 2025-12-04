@@ -53,7 +53,7 @@ export const posts = [
     id: "Black-and-white-portrait",
     type: "image",
     imgname: "image_drawed_2.jpg",
-    name: "black and white portrait",
+    name: "Black and white portrait",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
       "A black and white portrait of a young woman, with long, slightly messy hair..."
