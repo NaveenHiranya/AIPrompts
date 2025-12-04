@@ -7,7 +7,24 @@ export default function NotFound() {
   const post = posts.find((p) => p.id === id);
 
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [counter, setCounter] = useState(5);
 
+  // 5-second countdown for prompt loading
+  useEffect(() => {
+    if (counter === 0) {
+      setLoading(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCounter(counter - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [counter]);
+
+  // Ad script loader
   useEffect(() => {
     const oldScript = document.getElementById("ad-script");
     if (oldScript) oldScript.remove();
@@ -25,6 +42,7 @@ export default function NotFound() {
     document.body.appendChild(script);
   }, [id]);
 
+  // Copy Button
   const copyPrompt = () => {
     if (post?.prompt) {
       navigator.clipboard.writeText(post.prompt);
@@ -32,7 +50,7 @@ export default function NotFound() {
 
       setTimeout(() => {
         setCopied(false);
-      }, 4000); // 4 seconds
+      }, 4000);
     }
   };
 
@@ -44,32 +62,47 @@ export default function NotFound() {
         <>
           <h1 className="text-3xl font-bold text-center">{post.name}</h1>
 
+          {/* PROMPT CARD */}
           <div className="max-w-2xl mx-auto w-full bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
             <div className="flex justify-between items-center mb-3">
               <p className="text-lg font-semibold text-gray-300">Prompt</p>
 
               <button
                 onClick={copyPrompt}
+                disabled={loading}
                 className={`px-4 py-2 rounded-lg font-bold transition ${
-                  copied ? "bg-green-800" : "bg-green-600 hover:bg-green-500"
+                  copied
+                    ? "bg-green-800"
+                    : loading
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-green-600 hover:bg-green-500"
                 }`}
               >
-                {copied ? "Copied!" : "Copy"}
+                {loading ? "Wait..." : copied ? "Copied!" : "Copy"}
               </button>
             </div>
 
-            <p className="text-gray-200 whitespace-pre-wrap leading-relaxed">
-              {post.prompt}
-            </p>
+            {/* LOADING MESSAGE */}
+            {loading ? (
+              <p className="text-gray-400 italic">
+                Loading prompt... ({counter})
+              </p>
+            ) : (
+              <p className="text-gray-200 whitespace-pre-wrap leading-relaxed">
+                {post.prompt}
+              </p>
+            )}
           </div>
         </>
       )}
 
+      {/* AD */}
       <div
         id="container-156795e882446485cb5379ce3382344c"
         className="max-w-2xl mx-auto"
       />
 
+      {/* HOME BUTTON */}
       <Link
         to="/"
         className="bg-green-600 w-max mx-auto px-6 py-3 rounded-lg text-white font-bold hover:bg-green-500 transition"
