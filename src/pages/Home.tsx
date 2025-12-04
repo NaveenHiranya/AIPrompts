@@ -5,25 +5,16 @@ import AdUnit50 from "../components/AdUnit50";
 import AdUnitG from "../components/AdUnitG";
 import AdUnitHPF from "../components/AdUnitHPF";
 
+import Header from "../components/Header";
 import whatsapp from "../assets/PostImages/whatsapp.svg";
 import facebook from "../assets/PostImages/facebook.svg";
 
 export default function App() {
   return (
     <>
-      <div className="bg-black text-amber-50 font-bold p-3">
-        Vnix-AI Prompts
-      </div>
+      <Header />
 
-      <p className="bg-gray-700 p-2 text-green-500">
-        <span className="font-bold text-red-500">Important:</span> This content
-        contains ads. When you click "Get Prompt", an ad may appear. After the
-        ad finishes, come back and click again. Ads will only appear a maximum
-        of 3 times.
-      </p>
-
-      <div className="flex flex-wrap justify-center gap-2 bg-gray-700">
-
+      <div className="flex flex-wrap justify-center gap-2 bg-gray-900">
         {/* 1 */}
         <div className="overflow-y-auto">
           <Post
@@ -61,7 +52,7 @@ export default function App() {
             link="Night-City-Warrior"
           />
 
-          <AdUnitHPF />
+          <AdUnitHPF id="ad1" className="mx-auto my-4" showLabel={true} />
         </div>
 
         {/* 3 */}
@@ -83,8 +74,6 @@ export default function App() {
             name="A dramatic, stylized portrait"
             link="A-dramatic-stylized-portrait"
           />
-
-          
         </div>
 
         {/* 4 */}
@@ -107,13 +96,11 @@ export default function App() {
             link="The-temporal-fractal-of-a-weeping-willow"
           />
           <AdUnitG />
-          
         </div>
-
       </div>
 
       {/* Footer */}
-      <div className="flex flex-col items-center gap-2 text-white bg-gray-900 p-3">
+      <div className="flex flex-col items-center gap-2 text-white bg-black p-3">
         <a
           className="border flex w-max bg-gray-600 px-3 py-1 items-center font-bold text-white rounded-xl"
           href="https://www.facebook.com/profile.php?id=61584396424767"
