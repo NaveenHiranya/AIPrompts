@@ -10,21 +10,25 @@ export default function NotFound() {
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(5);
 
-  // 5-second countdown for prompt loading
+  /* -------------------------------
+      PROMPT LOADING COUNTDOWN
+  --------------------------------*/
   useEffect(() => {
     if (counter === 0) {
       setLoading(false);
       return;
     }
 
-    const timer = setTimeout(() => {
+    const t = setTimeout(() => {
       setCounter(counter - 1);
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(t);
   }, [counter]);
 
-  // Ad script loader
+  /* -------------------------------
+      MAIN INVOKE AD LOADER
+  --------------------------------*/
   useEffect(() => {
     const oldScript = document.getElementById("ad-script");
     if (oldScript) oldScript.remove();
@@ -39,14 +43,41 @@ export default function NotFound() {
     script.async = true;
     script.src =
       "//pl28179829.effectivegatecpm.com/156795e882446485cb5379ce3382344c/invoke.js";
+
     document.body.appendChild(script);
   }, [id]);
 
-  // Copy Button
+  /* -------------------------------------
+      SECOND AD SCRIPT (BEST PLACEMENT)
+  --------------------------------------*/
+  useEffect(() => {
+    const oldAd2 = document.getElementById("ad-script-2");
+    if (oldAd2) oldAd2.remove();
+
+    const script2 = document.createElement("script");
+    script2.id = "ad-script-2";
+    script2.type = "text/javascript";
+    script2.src =
+      "//pl28185165.effectivegatecpm.com/8e/d9/e0/8ed9e0d494732c88c49514fe24b93a32.js";
+
+    document.body.appendChild(script2);
+  }, [id]);
+
+  /* -------------------------------
+      COPY BUTTON + OPEN AD
+  --------------------------------*/
   const copyPrompt = () => {
     if (post?.prompt) {
       navigator.clipboard.writeText(post.prompt);
       setCopied(true);
+
+      // small delay → open ad
+      setTimeout(() => {
+        window.open(
+          "https://www.effectivegatecpm.com/udbfkap8f5?key=e61ce9290b438cdada71fde0ac68130f",
+          "_blank" // change to "_self" for same tab
+        );
+      }, 800);
 
       setTimeout(() => {
         setCopied(false);
@@ -60,9 +91,10 @@ export default function NotFound() {
         <p className="text-center text-xl font-bold">No post found</p>
       ) : (
         <>
+          {/* TITLE */}
           <h1 className="text-3xl font-bold text-center">{post.name}</h1>
 
-          {/* PROMPT CARD */}
+          {/* PROMPT BOX */}
           <div className="max-w-2xl mx-auto w-full bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
             <div className="flex justify-between items-center mb-3">
               <p className="text-lg font-semibold text-gray-300">Prompt</p>
@@ -82,7 +114,7 @@ export default function NotFound() {
               </button>
             </div>
 
-            {/* LOADING MESSAGE */}
+            {/* LOADING OR PROMPT */}
             {loading ? (
               <p className="text-gray-400 italic">
                 Loading prompt... ({counter})
@@ -96,13 +128,16 @@ export default function NotFound() {
         </>
       )}
 
-      {/* AD */}
+      {/* SECOND AD (best spot) */}
+      <div className="max-w-2xl mx-auto my-4" id="ad-slot-2"></div>
+
+      {/* INVOKE AD */}
       <div
         id="container-156795e882446485cb5379ce3382344c"
         className="max-w-2xl mx-auto"
       />
 
-      {/* HOME BUTTON */}
+      {/* GO HOME BUTTON */}
       <Link
         to="/"
         className="bg-green-600 w-max mx-auto px-6 py-3 rounded-lg text-white font-bold hover:bg-green-500 transition"
