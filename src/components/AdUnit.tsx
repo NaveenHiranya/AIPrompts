@@ -18,7 +18,8 @@ export default function AdUnit() {
     // Create script 2 (external)
     const script2 = document.createElement("script");
     script2.type = "text/javascript";
-    script2.src = "//www.highperformanceformat.com/6dbd6110b5d6a717bf2afa1158e6c853/invoke.js";
+    script2.src =
+      "//www.highperformanceformat.com/6dbd6110b5d6a717bf2afa1158e6c853/invoke.js";
 
     // Append scripts inside the container
     const adContainer = document.getElementById("ad-slot-" + uniqueId);
@@ -39,9 +40,12 @@ export default function AdUnit() {
   const uniqueId = Math.random().toString(36).substring(2, 9);
 
   return (
-    <div
-      id={"ad-slot-" + uniqueId}
-      style={{ width: 320, height: 50, margin: "10px auto" }}
-    ></div>
+    <>
+      <p className="text-red-600">Ad:</p>
+      <div
+        id={"ad-slot-" + uniqueId}
+        style={{ width: 320, height: 50, margin: "10px auto" }}
+      ></div>
+    </>
   );
 }
