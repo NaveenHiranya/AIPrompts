@@ -1,6 +1,8 @@
 import "../App.css";
 import Post from "../components/Post";
 import VideoPost from "../components/VideoPost";
+import AdUnit from "../components/AdUnit";
+
 import whatsapp from "../assets/PostImages/whatsapp.svg";
 import facebook from "../assets/PostImages/facebook.svg";
 
@@ -12,9 +14,10 @@ export default function App() {
       </div>
 
       <p className="bg-gray-700 p-2 text-green-500">
-        <span className="font-bold text-red-500">Important:</span> This content contains ads.
-        When you click "Get Prompt", an ad may appear. After the ad finishes,
-        come back and click again. Ads will only appear a maximum of 3 times.
+        <span className="font-bold text-red-500">Important:</span> This content
+        contains ads. When you click "Get Prompt", an ad may appear. After the
+        ad finishes, come back and click again. Ads will only appear a maximum
+        of 3 times.
       </p>
 
       <div className="flex flex-wrap justify-center gap-2 bg-gray-700">
@@ -32,6 +35,8 @@ export default function App() {
             videoname="ninetailfox.webm"
             link="Wild-white-nine-tailed-fox"
           />
+
+          <AdUnit />
         </div>
 
         {/* 2 */}
@@ -74,6 +79,8 @@ export default function App() {
             name="A dramatic, stylized portrait"
             link="A-dramatic-stylized-portrait"
           />
+
+          <AdUnit />
         </div>
 
         {/* 4 */}
@@ -99,6 +106,7 @@ export default function App() {
 
       </div>
 
+      {/* Footer */}
       <div className="flex flex-col items-center gap-2 text-white bg-gray-900 p-3">
         <a
           className="border flex w-max bg-gray-600 px-3 py-1 items-center font-bold text-white rounded-xl"
@@ -114,7 +122,7 @@ export default function App() {
           <img className="w-10" src={whatsapp} /> Whatsapp
         </a>
 
-        <p>Develped By Vnix</p>
+        <p>Developed By Vnix</p>
         <a href="/contact">contact</a>
       </div>
     </>
