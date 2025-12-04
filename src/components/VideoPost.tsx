@@ -42,7 +42,7 @@ export default function VideoPost({ name, videoname, link }: CardProps) {
   };
 
   return (
-    <div className="py-4 px-2 bg-gray-800 mx-auto rounded-2xl w-max border flex flex-col items-center m-2 relative">
+    <div className="py-4 px-2 bg-gray-800 mx-auto rounded-2xl w-max border flex flex-col items-center m-2 ">
       
       <div className="w-[300px] rounded-t-2xl overflow-hidden">
         {!isPlaying ? (
