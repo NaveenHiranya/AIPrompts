@@ -28,7 +28,7 @@ export default function App() {
           )}
         </div>
       </div>
-      <div>
+      {/* <div>
         <p>Images:</p>
         <div className="flex gap-2 border flex-nowrap overflow-x-auto">
           {posts.map(
@@ -39,8 +39,8 @@ export default function App() {
               )
           )}
         </div>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <p>Images:</p>
         <div className="flex gap-2 flex-wrap">
           {posts.map(
@@ -51,7 +51,7 @@ export default function App() {
               )
           )}
         </div>
-      </div>
+      </div> */}
       
       {/* Footer */} 
       <div className="flex flex-col items-center gap-2 text-white bg-black p-3">
