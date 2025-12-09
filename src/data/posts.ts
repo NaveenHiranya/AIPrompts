@@ -1,8 +1,9 @@
 export const posts = [
-  {
+ {
     id: "Embrace-of-the-Wind",
     type: "image",
     imgname: "image_music_boy.jpg",
+    ratio:"small",
     name: "Embrace of the Wind",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -12,6 +13,7 @@ export const posts = [
   {
     id: "Wild-white-nine-tailed-fox",
     type: "video",
+    ratio:"large",
     videoname: "ninetailfox.webm",
     name: "Wild white nine tailed fox",
     description: "video - KlingAI",
@@ -23,6 +25,7 @@ export const posts = [
     id: "Grace-in-the-Stormlight",
     type: "image",
     imgname: "image_music_girl.jpg",
+    ratio:"small",
     name: "Grace in the Stormlight",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -32,6 +35,7 @@ export const posts = [
   {
     id: "Cinematic-scene-of-wild-horses",
     type: "video",
+    ratio:"large",
     videoname: "horses_4.webm",
     name: "Cinematic scene of wild horses",
     description: "video - KlingAI",
@@ -43,6 +47,7 @@ export const posts = [
     id: "Night-City-Warrior",
     type: "image",
     imgname: "samurai_4.jpg",
+    ratio:"small",
     name: "Night City Warrior",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -53,6 +58,7 @@ export const posts = [
     id: "Black-and-white-portrait",
     type: "image",
     imgname: "image_drawed_2.jpg",
+    ratio:"large",
     name: "Black and white portrait",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -63,6 +69,7 @@ export const posts = [
     id: "The-ornate-central-airship",
     type: "video",
     videoname: "Theornate2.webm",
+    ratio:"small",
     name: "The ornate central airship",
     description: "Image to video - KlingAI",
     prompt:
@@ -73,6 +80,7 @@ export const posts = [
     id: "A-dramatic-stylized-portrait",
     type: "image",
     imgname: "Art_design.jpg",
+    ratio:"medium",
     name: "A dramatic, stylized portrait",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -83,6 +91,7 @@ export const posts = [
     id: "City-Wall-Confidence",
     type: "image",
     imgname: "image_drawed_1.jpg",
+    ratio:"small",
     name: "City Wall Confidence",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -93,6 +102,7 @@ export const posts = [
     id: "Golden-Hour-Quiet",
     type: "image",
     imgname: "flower_girl_3.jpg",
+    ratio:"large",
     name: "Golden Hour Quiet",
     description: "image - Nano Banana Pro (Gemini)",
     prompt:
@@ -103,6 +113,7 @@ export const posts = [
     id: "The-temporal-fractal-of-a-weeping-willow",
     type: "video",
     videoname: "The_temporal_fractal.webm",
+    ratio:"large",
     name: "The temporal fractal of a weeping willow",
     description: "Image to video - KlingAI",
     prompt:
