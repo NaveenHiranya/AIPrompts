@@ -6,6 +6,8 @@ import Post from "../components/Post";
 // import AdUnitHPF from "../components/AdUnitHPF";
                    
 import Header from "../components/Header";
+import Banner from "../components/Banner";
+
 import whatsapp from "../assets/PostImages/whatsapp.svg";
 import facebook from "../assets/PostImages/facebook.svg";
 
@@ -16,7 +18,8 @@ export default function App() {
   return (
     <>
       <Header />
-      <div>
+      <Banner />
+      <div className="p-3">
         <p>Images:</p>
         <div className="flex gap-2 flex-nowrap overflow-x-scroll no-scrollbar">
           {posts.map(

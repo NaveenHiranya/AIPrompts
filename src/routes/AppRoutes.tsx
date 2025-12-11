@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound";
 import Post from "../pages/Post";
 import Categories from "../pages/Categories";
 import Info from "../pages/Info";
+import Productive from "../pages/Productive";
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/post/:id" element={<Post />} />
       <Route path="/Info" element={<Info />} />
+      <Route path="/productivity-prompt" element={<Productive />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
