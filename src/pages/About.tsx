@@ -10,7 +10,7 @@ export default function AboutMe() {
         <title>About Naveen Hiranya</title>
         <meta
           name="description"
-          content="Learn about Naveen, an undergraduate in Management and IT at the University of Kelaniya, passionate about AI Prompt Engineering and full-stack web development."
+          content="Learn about Naveen Hiranya, an undergraduate in Management and IT at the University of Kelaniya, passionate about AI Prompt Engineering and full-stack web development."
         />
       </Helmet>
 
