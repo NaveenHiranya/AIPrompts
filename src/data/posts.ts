@@ -118,5 +118,45 @@ export const posts = [
     description: "Image to video - KlingAI",
     prompt:
       "The temporal fractal of a weeping willow, entwined in the murky tapestry of a swamp..."
-  }
+  },
+  {
+    id: "Neon-Fish",
+    type: "image",
+    imgname: "2.webp",
+    ratio:"squre",
+    name: "Neon Fish",
+    description: "image - Nano Banana Pro (Gemini)",
+    prompt:
+      "A glowing neon fish swimming in dark water, bioluminescent scales in cyan and magenta, macro photography, high contrast, cinematic lighting."
+  },
+  {
+    id: "A-cinematic-nature-photograph",
+    type: "image",
+    imgname: "4.webp",
+    ratio:"squre",
+    name: "A cinematic nature photograph",
+    description: "image - Nano Banana Pro (Gemini)",
+    prompt:
+      "A cinematic nature photograph of a serene autumn forest. A whitetail deer drinks gracefully from a rocky, bubbling stream alongside a winding dirt path. Sunlight filters through a dense canopy of vibrant red, orange, and gold trees, casting dappled light on moss-covered boulders and fallen leaves that blanket the forest floor. Highly detailed, natural colors, photorealistic film grain."
+  },
+  {
+    id: "photograph-of-a-customized-cyberpunk",
+    type: "image",
+    imgname: "3.webp",
+    ratio:"squre",
+    name: "photograph of a customized cyberpunk",
+    description: "image - Nano Banana Pro (Gemini)",
+    prompt:
+      "A detailed photograph of a customized cyberpunk sportbike parked on a rain-slicked street at night. The motorcycle features weathered, grimy metal fairings accented by glowing violet and blue neon light strips along the frame and wheel rims. Futuristic digital dashboard screens are visible on the handlebars. The background is a dense, fog-laden futuristic Asian metropolis filled with towering skyscrapers, glowing neon advertisements with Japanese characters, and reflections on the wet asphalt. Cinematic lighting."
+  },
+  {
+    id: "Anime-style-illustration",
+    type: "image",
+    imgname: "1.webp",
+    ratio:"squre",
+    name: "Anime style illustration",
+    description: "image - Nano Banana Pro (Gemini)",
+    prompt:
+      "generate image as Anime style illustration and ratio 1:1, highly detailed in the style of the movie 'Your Name'. A slim girl with very long, straight black hair reaching down to her knees. She is wearing a modern hoodie and leggings. She stands on an asphalt mountain road behind a complete horizontal silver iron barrier fence. Her hand rests on the fence as she looks out toward the calm sea in the distance. The background features lush grassy mountains and a blue ocean without large waves. The camera angle is low, looking slightly up from the precipice side, zoomed in to focus on the girl and her long hair."
+  },
 ];
