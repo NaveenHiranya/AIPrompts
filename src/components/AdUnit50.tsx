@@ -41,7 +41,6 @@ export default function AdUnit50() {
 
   return (
     <>
-      <p className="text-red-600">Ad:</p>
       <div
         id={"ad-slot-" + uniqueId}
         style={{ width: 320, height: 50, margin: "10px auto" }}

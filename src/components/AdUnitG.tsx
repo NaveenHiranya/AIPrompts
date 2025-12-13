@@ -17,7 +17,6 @@ export default function AdUnitG() {
 
   return (
     <>
-    <p className="text-red-600">Google Ad:</p>
     <ins
       className="adsbygoogle"
       style={{ display: "block", margin: "10px 0" }}
