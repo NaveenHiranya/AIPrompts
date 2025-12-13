@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Sparkles, ExternalLink } from "lucide-react";
+import {  Sparkles, ExternalLink } from "lucide-react";
 
 // KEEP YOUR EXISTING IMAGE IMPORTS HERE
 import image1 from "../assets/WebImages/1.webp";

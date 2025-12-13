@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight, MessageCircle, Facebook, Mail, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight} from "lucide-react";
 import "../App.css";
 
 // Components
