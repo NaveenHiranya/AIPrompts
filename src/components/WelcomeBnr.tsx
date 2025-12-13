@@ -19,7 +19,7 @@ export default function WelcomeBnr() {
           name="keywords"
           content="AI prompts, prompt engineering, ChatGPT prompts, AI tools, Vnix AI, prompt library"
         />
-        <link rel="canonical" href="https://your-domain.vercel.app/" />
+        <link rel="canonical" href="https://ai-prompts-coral.vercel.app/" />
       </Helmet>
 
       {/* UI */}
