@@ -9,18 +9,18 @@ export default function Header() {
   return (
     <>
       {/* HEADER */}
-      <div className="bg-gray-900 text-white px-6 py-4 sticky top-0 z-50 shadow-md">
-        <div className="flex justify-between items-center border border-blue-500 px-2 py-1 rounded-2xl md:text-xl md:py-3 md:px-4">
-          <p className="text-lg font-bold">Ai Prompts</p>
+      <div className="bg-gray-900 text-white  sticky top-0 z-50 shadow-md">
+        <div className="flex justify-between bg-emerald-600 items-center border-b-2 border-b-emerald-900 px-2 py-1 md:text-xl md:py-3 md:px-4">
+          <p className="text-lg font-bold">VNIX</p>
 
           <div className="flex items-center gap-4">
             {/* Desktop menu */}
             <div className="hidden md:flex gap-6">
-              <a className={link} href="/categories">
+              {/* <a className={link} href="/categories">
                 Categories
-              </a>
+              </a> */}
               <a className={link} href="/about">
-                About Us
+                AboutMe
               </a>
             </div>
 
@@ -52,12 +52,13 @@ export default function Header() {
           ${open ? "translate-x-0" : "translate-x-full"}
         `}
       >
-        <a className={barLink} href="/categories" onClick={() => setOpen(false)}>
-          Categories
-        </a>
         <a className={barLink} href="/about" onClick={() => setOpen(false)}>
-          About Us
+          About Me
         </a>
+        {/* <a className={barLink} href="/categories" onClick={() => setOpen(false)}>
+          Categories
+        </a> */}
+        
       </div>
     </>
   );

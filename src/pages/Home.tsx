@@ -7,6 +7,7 @@ import Post from "../components/Post";
                    
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+import WelcomeBnr from "../components/WelcomeBnr";
 
 import whatsapp from "../assets/PostImages/whatsapp.svg";
 import facebook from "../assets/PostImages/facebook.svg";
@@ -18,9 +19,15 @@ export default function App() {
   return (
     <>
       <Header />
+      <WelcomeBnr />
+      <div  className="w-full text-center">
+        <p className="font-bold text-3xl">Latest Posts</p>
+      </div>
       <Banner />
-      <div className="p-3">
-        <p>Images:</p>
+      <div  className="w-full text-center">
+        <p className="font-bold text-3xl">Images</p>
+      </div>
+      <div className="p-3 h-min">
         <div className="flex gap-2 flex-nowrap overflow-x-scroll no-scrollbar">
           {posts.map(
             (post) =>

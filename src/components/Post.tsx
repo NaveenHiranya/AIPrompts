@@ -23,7 +23,7 @@ export default function Post({ imgname, name, link }: CardProps) {
   };
 
   return (
-    <div className="py-5 px-4 bg-gray-800 mx-auto rounded-2xl w-max flex flex-col  items-center m-2">
+    <div className="py-5 px-4 bg-gray-800 mx-auto rounded-2xl w-max flex flex-col  items-center m-2 h-min">
       <div className="w-[300px] rounded-t-2xl overflow-hidden">
         <img
           className="w-[300px] h-max object-cover rounded-t-2xl"
