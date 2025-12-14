@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { ArrowLeft, MapPin, GraduationCap, Code2, Github, Linkedin, Mail } from "lucide-react";
+import NaveenHiranya from "../assets/WebImages/NaveenHiranya.png";
 
 // Define props type for the helper component
 interface SocialButtonProps {
@@ -10,20 +11,34 @@ interface SocialButtonProps {
 }
 
 export default function AboutMe() {
-  // Placeholder image service that generates an image with initials
-  // Changed background to a darker slate to match theme better without the glow
-  const dummyProfile = "https://ui-avatars.com/api/?name=Naveen+Hiranya&background=0f172a&color=10b981&size=256&bold=true";
+  // Define your site domain for absolute URLs (Required for SEO images)
+  const siteUrl = "https://ai-prompts-coral.vercel.app";
+  const absoluteImageUrl = `${siteUrl}${NaveenHiranya}`;
 
   return (
     <HelmetProvider>
-      {/* SEO */}
+      {/* SEO Configuration */}
       <Helmet>
+        {/* Standard Metadata */}
         <title>About Naveen Hiranya | Full Stack Developer & AI Enthusiast</title>
         <meta
           name="description"
           content="Portfolio of Naveen Hiranya, a Management & IT undergraduate at the University of Kelaniya specializing in Full-Stack Development and AI Prompt Engineering."
         />
-        <link rel="canonical" href="https://ai-prompts-coral.vercel.app/about" />
+        <link rel="canonical" href={`${siteUrl}/about`} />
+
+        {/* Open Graph / Facebook / LinkedIn / WhatsApp */}
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="About Naveen Hiranya | Full Stack Developer" />
+        <meta property="og:description" content="Discover Naveen Hiranya's portfolio. Specializing in React, Node.js, and AI Prompt Engineering." />
+        <meta property="og:image" content={absoluteImageUrl} />
+        <meta property="og:url" content={`${siteUrl}/about`} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Naveen Hiranya" />
+        <meta name="twitter:description" content="Management & IT Undergraduate | Full-Stack Dev | AI Enthusiast" />
+        <meta name="twitter:image" content={absoluteImageUrl} />
       </Helmet>
 
       {/* Page Container */}
@@ -46,19 +61,16 @@ export default function AboutMe() {
           {/* Hero / Profile Card */}
           <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-xl relative overflow-hidden">
             
-            {/* Subtle Background Decor (kept this as general ambience, not tied to photo) */}
+            {/* Subtle Background Decor */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
             <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
               
-              {/* --- CLEANER PROFILE IMAGE SECTION --- */}
+              {/* --- PROFILE IMAGE SECTION --- */}
               <div className="flex-shrink-0 text-center">
-                {/* Removed the glowing background div completely.
-                   Using a clean ring and subtle shadow instead.
-                */}
                 <img
-                  src={dummyProfile}
-                  alt="Naveen Hiranya"
+                  src={NaveenHiranya}
+                  alt="Naveen Hiranya - Full Stack Developer"
                   className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-2 ring-emerald-500/30 shadow-md bg-slate-800"
                 />
                 
@@ -139,7 +151,7 @@ export default function AboutMe() {
   );
 }
 
-// Helper Component for Social Buttons (Typed)
+// Helper Component for Social Buttons
 function SocialButton({ icon: Icon, href, label }: SocialButtonProps) {
   return (
     <a
