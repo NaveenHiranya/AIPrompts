@@ -20,16 +20,16 @@ export default function AboutMe() {
       {/* SEO Configuration */}
       <Helmet>
         {/* Standard Metadata */}
-        <title>About Naveen Hiranya | Full Stack Developer & AI Enthusiast</title>
+        <title>Naveen Hiranya</title>
         <meta
           name="description"
-          content="Portfolio of Naveen Hiranya, a Management & IT undergraduate at the University of Kelaniya specializing in Full-Stack Development and AI Prompt Engineering."
+          content="Portfolio of Naveen Hiranya, a Management & IT undergraduate at the University of Kelaniya"
         />
         <link rel="canonical" href={`${siteUrl}/about`} />
 
         {/* Open Graph / Facebook / LinkedIn / WhatsApp */}
         <meta property="og:type" content="profile" />
-        <meta property="og:title" content="About Naveen Hiranya | Full Stack Developer" />
+        <meta property="og:title" content="Naveen Hiranya" />
         <meta property="og:description" content="Discover Naveen Hiranya's portfolio. Specializing in React, Node.js, and AI Prompt Engineering." />
         <meta property="og:image" content={absoluteImageUrl} />
         <meta property="og:url" content={`${siteUrl}/about`} />
@@ -37,7 +37,7 @@ export default function AboutMe() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Naveen Hiranya" />
-        <meta name="twitter:description" content="Management & IT Undergraduate | Full-Stack Dev | AI Enthusiast" />
+        <meta name="twitter:description" content="Management & IT Undergraduate" />
         <meta name="twitter:image" content={absoluteImageUrl} />
       </Helmet>
 
@@ -70,7 +70,7 @@ export default function AboutMe() {
               <div className="flex-shrink-0 text-center">
                 <img
                   src={NaveenHiranya}
-                  alt="Naveen Hiranya - Full Stack Developer"
+                  alt="Naveen Hiranya"
                   className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-2 ring-emerald-500/30 shadow-md bg-slate-800"
                 />
                 
